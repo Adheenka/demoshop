@@ -7,8 +7,7 @@ def add(request):
     if request.method=='POST':
         name=request.POST.get('task','')
         priority=request.POST.get('priority','')
-        date = request.POST.get('date', '')
-        task=Task(name=name,priority=priority,date=date)
+        task=Task(name=name,priority=priority)
         task.save()
 
     return render(request,'home.html',{'task1':task1})
